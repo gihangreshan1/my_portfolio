@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* Navbar */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    background:rgba(15,23,42,.8);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.menu-btn{
+    display:none;
+    font-size:1.5rem;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 10%;
+    gap:60px;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero h1{
+    font-size:4rem;
+}
+
+.hero h2{
+    color:#38bdf8;
+    margin:10px 0;
+}
+
+.hero p{
+    margin:20px 0;
+    line-height:1.8;
+    color:#cbd5e1;
+}
+
+.hero-image img{
+    width:350px;
+    border-radius:30px;
+    box-shadow:0 0 40px rgba(56,189,248,.4);
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    margin-right:10px;
+    transition:.3s;
+}
+
+.primary{
+    background:#38bdf8;
+    color:white;
+}
+
+.secondary{
+    border:2px solid #38bdf8;
+    color:#38bdf8;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.socials{
+    margin-top:25px;
+}
+
+.socials a{
+    color:white;
+    font-size:1.5rem;
+    margin-right:15px;
+}
+
+/* Sections */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+}
+
+.about-card,
+.project-card,
+.skill-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+}
+
+.about-card{
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.skill-card{
+    text-align:center;
+    padding:25px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    padding:30px;
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+/* Contact */
+
+.contact-form{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#1e293b;
+    color:white;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+.hero-image img{
+    width:280px;
+}
+
+.nav-links{
+    display:none;
+}
+
+.menu-btn{
+    display:block;
+}
+}
+
+
+
+
+/* ==========================
+   Education Section
+========================== */
+
+#education .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#education .about-card {
+    position: relative;
+    border-left: 4px solid #38bdf8;
+    transition: 0.3s ease;
+}
+
+#education .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+#education h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+#education p {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+/* ==========================
+   Certificate Section
+========================== */
+
+#certificates .project-card {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#certificates .project-card:hover {
+    transform: translateY(-10px);
+    border: 1px solid #38bdf8;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+#certificates h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+#certificates p {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+/* ==========================
+   Timeline Effect
+========================== */
+
+#education {
+    position: relative;
+}
+
+#education::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 120px;
+    bottom: 50px;
+    width: 2px;
+    background: rgba(56, 189, 248, 0.2);
+}
+
+@media(max-width:768px) {
+
+    #education::before {
+        display: none;
+    }
+
+    #education .about-card {
+        border-left: 3px solid #38bdf8;
+    }
+}
+
+/* ==========================
+   Section Animation
+========================== */
+
+.about-card,
+.project-card,
+.skill-card {
+    transition: all 0.3s ease;
+}
+
+.about-card:hover,
+.project-card:hover,
+.skill-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ==========================
+   Certificate Badge Style
+========================== */
+
+#certificates .project-card::before {
+    content: "🏆";
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 15px;
+}
