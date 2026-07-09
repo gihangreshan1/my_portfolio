@@ -185,7 +185,9 @@ section{
     padding:30px;
     transition:.3s;
 }
-
+.github_link{
+    color: white;
+}
 .project-card:hover{
     transform:translateY(-10px);
 }
