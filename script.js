@@ -42,30 +42,30 @@ typeEffect();
 const volunteerEvents = [
 
 {
-    title:"Introduction to Machine Learning for Software Engineers organized by SESoc",
+    title:"Introduction to Machine Learning for Software Engineers (SESOC)",
     role:"Event Volunteer",
     image:"images/sesoc-1.jfif",
     date:"November 2025",
     description:
-    "Tested the official SESoc website, identified bugs, verified features, and collaborated with the development team to improve usability."
+    "Participated in the Introduction to Machine Learning for Software Engineers event organized by SESOC. Engaged with the session content, collaborated with fellow participants, and gained knowledge about machine learning concepts and their applications in software engineering."
 },
 
 {
-    title:"Anual Grand Meeting (SESoc) 2026",
+    title:"Annual Grand Meeting (SESOC) 2026",
     role:"Event Volunteer",
     image:"images/sesoc-2.jfif",
     date:"January 2026",
     description:
-    "Supported participant registration, technical coordination, and event logistics while assisting teams throughout the competition."
+    "Participated in the Annual Grand Meeting (SESOC) 2026 and collaborated with society members during the event. Engaged in society activities, networked with fellow members, and gained experience through involvement in the software engineering community."
 },
 
 {
-    title:"QA Testing for SESoc  official website",
+    title:"QA Testing for SESOC Official Website",
     role:"QA Volunteer",
     image:"images/sesoc-site.png",
     date:"August 2025",
     description:
-    "Guided beginners through HTML, CSS, and JavaScript fundamentals while helping them build their first responsive website."
+    "As a QA Volunteer, I performed manual testing on the SESOC official website to verify functionality and identify defects. I created and executed test cases, documented issues, and reported bugs to support the development team in improving the website's quality and user experience."
 }
 
 ];
@@ -95,5 +95,50 @@ volunteerEvents.forEach(event => {
     </div>
 
     `;
+
+});
+
+const footerOrganizations = [
+
+
+{
+    logo:"images/sesoc.webp",
+    name:"SESoc",
+    url:"https://your-profile.com"
+},
+
+
+
+{
+    logo:"images/csoc-iee.png",
+    name:"IEEE Computer Society",
+    url:""
+},
+
+{
+    logo:"images/ieee-logo.webp",
+    name:"IEEE",
+    url:"https://ieee-collabratec.ieee.org/app/p/GihanMadurapriya1161029"
+}
+
+];
+
+const container = document.getElementById("footerOrganizations");
+
+footerOrganizations.forEach(org=>{
+
+container.innerHTML += `
+
+<a class="footer-org"
+href="${org.url}"
+target="_blank">
+
+<img src="${org.logo}" alt="${org.name}">
+
+<span>${org.name}</span>
+
+</a>
+
+`;
 
 });
