@@ -144,11 +144,30 @@ target="_blank">
 });
 
 const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
+const navMenu = document.querySelector(".nav-links");
 
 menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+
+    menuBtn.classList.toggle("active");
+
+    navMenu.classList.toggle("active");
+
 });
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        menuBtn.classList.remove("active");
+
+        navMenu.classList.remove("active");
+
+    });
+
+
+
+});
+
 
 // Close menu after clicking
 
@@ -156,4 +175,142 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
     link.addEventListener("click",()=>{
         navLinks.classList.remove("active");
     });
+});
+
+document.addEventListener("click",(e)=>{
+
+if(
+
+!menuBtn.contains(e.target) &&
+
+!navMenu.contains(e.target)
+
+){
+
+menuBtn.classList.remove("active");
+
+navMenu.classList.remove("active");
+
+}
+
+});
+
+const themeBtn = document.getElementById("themeToggle");
+const body = document.body;
+const icon = themeBtn.querySelector("i");
+
+// Load saved theme
+if(localStorage.getItem("theme") === "light"){
+    body.classList.add("light");
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+}
+
+themeBtn.addEventListener("click", ()=>{
+
+    body.classList.toggle("light");
+
+    if(body.classList.contains("light")){
+
+        localStorage.setItem("theme","light");
+
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+
+    }else{
+
+        localStorage.setItem("theme","dark");
+
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+
+    }
+
+});
+
+fetch("https://api.github.com/users/gihangreshan1")
+.then(response => response.json())
+.then(data => {
+
+    document.getElementById("githubStats").innerHTML = `
+
+        <div class="github-stat">
+            <strong>Public Repositories</strong>
+            <span>${data.public_repos}</span>
+        </div>
+
+        <div class="github-stat">
+            <strong>Followers</strong>
+            <span>${data.followers}</span>
+        </div>
+
+        <div class="github-stat">
+            <strong>Following</strong>
+            <span>${data.following}</span>
+        </div>
+
+        <div class="github-stat">
+            <strong>Username</strong>
+            <span>${data.login}</span>
+        </div>
+
+    `;
+
+})
+.catch(() => {
+
+    document.getElementById("githubStats").innerHTML =
+    "Unable to load GitHub information.";
+
+});
+
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+document
+.querySelector(".filter-btn.active")
+.classList.remove("active");
+
+button.classList.add("active");
+
+const filter = button.dataset.filter;
+
+projectCards.forEach(card=>{
+
+if(
+
+filter==="all" ||
+
+card.dataset.category===filter
+
+){
+
+card.classList.remove("hide");
+
+}else{
+
+card.classList.add("hide");
+
+}
+
+});
+
+});
+
+});
+
+AOS.init({
+
+    duration:1000,
+
+    once:true,
+
+    offset:100,
+
 });
