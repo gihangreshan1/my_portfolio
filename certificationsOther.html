@@ -25,13 +25,13 @@
     color: #ffffff;
 }
 
-.projects-grid {
+.certificate-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
 }
 
-.project-card {
+.certificate-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(15px);
@@ -41,25 +41,25 @@
     text-align: center;
 }
 
-.project-card:hover {
+.certificate-card:hover {
     transform: translateY(-10px);
     border-color: #38bdf8;
     box-shadow: 0 15px 35px rgba(56, 189, 248, 0.25);
 }
 
-.project-card h3 {
+.certificate-card h3 {
     color: #38bdf8;
     margin-bottom: 15px;
     font-size: 1.3rem;
 }
 
-.project-card p {
+.certificate-card p {
     color: #cbd5e1;
     margin-bottom: 10px;
     line-height: 1.6;
 }
 
-.project-card::before {
+.certificate-card::before {
     content: "🏆";
     display: block;
     font-size: 3rem;
@@ -145,7 +145,7 @@ footer {
         font-size: 2rem;
     }
 
-    .project-card {
+    .certificate-card {
         padding: 20px;
     }
 }
@@ -165,9 +165,9 @@ footer {
 <section id="certifications">
     <div class="section-title">Other Certifications</div>
 
-    <div class="projects-grid">
+    <div class="certificate-grid">
 
-        <div class="project-card">
+        <div class="certificate-card">
             <h3>IEEEXtreem 19.0 Coding Challanges</h3>
             <p>Issued by: IEEEXtreem </p>
             <p>Date Earned: Octomber 2025</p>
