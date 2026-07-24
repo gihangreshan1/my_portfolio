@@ -62,7 +62,7 @@ const volunteerEvents = [
 {
     title:"QA Testing for SESOC Official Website",
     role:"QA Volunteer",
-    image:"images/sesoc-site.png",
+    image:"images/sesoc1.png",
     date:"August 2025",
     description:
     "As a QA Volunteer, I performed manual testing on the SESOC official website to verify functionality and identify defects. I created and executed test cases, documented issues, and reported bugs to support the development team in improving the website's quality and user experience."
